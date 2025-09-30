@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS Only Drawer Examples</title>
+<style>
+  :root {
+    --drawer-width: 260px;
+  }
+
+  /***********************************
+   * 1) CHECKBOX HACK STYLES
+   ***********************************/
+  /* hide the checkbox */
+  #drawer-toggle {
+    position: absolute;
+    left: -9999px;
+  }
+
+  /* open button */
+  .open-btn {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #1f2937;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* overlay */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    pointer-events: none;
+    transition: background .2s ease;
+  }
+
+  /* drawer */
+  .drawer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--drawer-width);
+    transform: translateX(calc(-1 * var(--drawer-width)));
+    transition: transform .25s ease;
+    background: #f8fafc;
+    box-shadow: 4px 0 18px rgba(0,0,0,.12);
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 50;
+  }
+
+  /* when checkbox is checked -> show drawer + overlay */
+  #drawer-toggle:checked ~ .overlay {
+    background: rgba(0,0,0,.45);
+    pointer-events: auto;
+  }
+  #drawer-toggle:checked ~ .drawer {
+    transform: translateX(0);
+  }
+
+  .close-btn {
+    display: inline-block;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+
+  /***********************************
+   * 3) :TARGET STYLES
+   ***********************************/
+  #target-drawer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--drawer-width);
+    transform: translateX(-100%);
+    transition: transform .25s;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  #target-drawer:target {
+    transform: translateX(0);
+    box-shadow: 4px 0 18px rgba(0,0,0,.12);
+  }
+</style>
+</head>
+<body>
+<main style="padding:20px;">
+  <h1>CSS-Only Drawer Menus</h1>
+
+  <!-- ==============================
+       1) CHECKBOX HACK EXAMPLE
+       ============================== -->
+  <h2>1) Checkbox Hack</h2>
+  <!-- hidden checkbox -->
+  <input id="drawer-toggle" type="checkbox" />
+  <!-- button to open drawer -->
+  <label for="drawer-toggle" class="open-btn">☰ Open Drawer</label>
+  <!-- overlay (also closes drawer) -->
+  <label for="drawer-toggle" class="overlay"></label>
+  <!-- drawer content -->
+  <aside class="drawer">
+    <label for="drawer-toggle" class="close-btn">✕ Close</label>
+    <h3>Menu</h3>
+    <nav>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+
+  <!-- ==============================
+       2) DETAILS / SUMMARY EXAMPLE
+       ============================== -->
+  <h2 style="margin-top:60px;">2) &lt;details&gt; / &lt;summary&gt;</h2>
+  <details>
+    <summary style="cursor:pointer; padding:8px 12px; background:#111827; color:#fff; border-radius:6px; display:inline-block;">☰ Open Drawer</summary>
+    <div style="width:var(--drawer-width); padding:16px; background:#f8fafc; box-shadow:0 4px 12px rgba(0,0,0,.08);">
+      <h3>Drawer</h3>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="#">Item A</a></li>
+        <li><a href="#">Item B</a></li>
+      </ul>
+    </div>
+  </details>
+
+
+  <!-- ==============================
+       3) :TARGET EXAMPLE
+       ============================== -->
+  <h2 style="margin-top:60px;">3) :target</h2>
+  <!-- open button -->
+  <a href="#target-drawer" style="padding:8px 12px; background:#0b5; color:#fff; border-radius:6px;">☰ Open Drawer</a>
+  <!-- drawer element -->
+  <aside id="target-drawer">
+    <a href="#" style="display:block; padding:12px 0;">✕ Close</a>
+    <nav>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+</main>
+</body>
+</html>

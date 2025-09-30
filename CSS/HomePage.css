@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+}
+.header-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: auto;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.leftSide {
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.header-container img {
+  width: 70px;
+  height: 60px;
+}
+.leftSide h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+.NavBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.NavBar a {
+  text-decoration: none;
+  color: white;
+  flex-wrap: nowrap;
+  margin: 10px;
+  position: relative;
+  padding-bottom: 5px;
+}
+.NavBar a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.NavBar a:hover::after {
+  transform: scaleX(1);
+}
+.rightSide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.searchForm {
+  padding: 7px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 35px;
+  transition: border-color 1s ease;
+}
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  position: absolute;
+  left: 0.5rem;
+  color: #9ca3af;
+}
+.searchForm:focus {
+  outline: none;
+  border: solid;
+  border-color: rgb(20, 20, 255);
+  border: 3;
+}
+
+.count {
+  position: absolute;
+  top: 0;
+  left: 0.4rem;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: xx-small;
+  padding: 3px;
+  height: 7px;
+  text-align: center;
+}
+.icon {
+  position: relative;
+  margin-left: 5px;
+}
+.ShoppingCart::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  margin-left: 5px;
+}
+.ShoppingCart:hover::after {
+    margin-left: 5px;
+  transform: scaleX(0.6);
+}
+.icon a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: large;
+}
+.icon1 {
+  position: relative;
+  margin-left: 5px;
+}
+.icon1 a {
+  display: flex;
+  justify-content: right;
+  width: 100px;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: large;
+  margin-right: 5px;
+}
+.icon1 a span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-right: 10px;
+  font-size: medium;
+}
+.icon1 a span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -1;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.icon1 a span:hover::after {
+  transform: scaleX(0.5);
+}
+.Menu{
+  display: none;
+}
+@media (max-width:771px) {
+  .NavBar{
+    display: none;
+  }
+  .icon1{
+    display: none;
+  }
+  .Menu {
+    display:block;
+    color: white;
+  }
+  .Menu a{
+    text-decoration: none;
+  }
+  .menu-btn img {
+  width: 32px;   /* adjust to smaller size */
+  height: 28px;
+  margin: 8px;   /* keep spacing */
+  display: block;
+}
+
+  /* hide checkbox */
+#drawer-toggle {
+  position: absolute;
+  left: -9999px;
+}
+
+
+.menu-btn {
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  pointer-events: none;
+  transition: background 0.3s ease;
+  z-index: 90;
+}
+
+/* drawer styles */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 100vh;
+  background: #000000;
+  color: white;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+  padding: 20px;
+  z-index: 100;
+}
+
+.drawer h3 {
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.drawer nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 12px 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s ease;
+  transition: background-color 0.5s ease;
+}
+.drawer nav a:hover {
+  color: #ffffff;
+  background-color: darkslategray;
+}
+
+#drawer-toggle:checked ~ .overlay {
+  background: rgba(0,0,0,0.4);
+  pointer-events: auto;
+}
+#drawer-toggle:checked ~ .drawer {
+  transform: translateX(0);
+}
+
+}
