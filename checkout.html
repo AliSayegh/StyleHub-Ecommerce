@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="./CSS/Base.css">
+     <link rel="stylesheet" href="./CSS/checkout.css">
+</head>
+<body>
+      <header>
+            <div class="header-container">
+                <div class="leftSide">
+                    <img
+                        src="./icons/Logo.png"
+                        alt="LOGO">
+                    <h3><i>StyleHub</i></h3>
+                </div>
+                <div class="center">
+                    <nav class="NavBar">
+                        <a href="index.html">Home</a>
+                        <a href>Categories</a>
+                        <a href>New</a>
+                        <a href>Sale</a>
+                    </nav>
+                </div>
+                <div class="rightSide">
+                    <div class="search">
+                        <input class="searchForm" type="search"
+                            placeholder="search">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="icon">
+                        <a href="cart.html" title="Shopping Cart">
+                            <span class="ShoppingCart">🛒</span>
+                            <span class="count">3</span>
+                        </a>
+                    </div>
+                    <div class="icon1">
+                        <a href="account.html">
+                            <span>Account</span>👤
+                        </a>
+                    </div>
+                    <div class="Menu">
+                        <!-- hidden checkbox -->
+                        <input type="checkbox" id="drawer-toggle" />
+
+                        <!-- label acts as button -->
+                        <label for="drawer-toggle" class="menu-btn">
+                            <img src="./icons/icons8-menu-24.png" alt="Menu">
+                        </label>
+                        <label for="drawer-toggle" class="overlay"></label>
+                        <aside class="drawer">
+                            <h3>Menu</h3>
+                            <nav>
+                                <a href="#">Home</a>
+                                <a href="#">Categories</a>
+                                <a href="#">New</a>
+                                <a href="#">Sale</a>
+                                <a href="account.html">Account</a>
+                            </nav>
+                        </aside>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+    <main id="main" class="checkout-section section">
+  <div class="container">
+    <h1>Checkout</h1>
+
+    <div class="checkout-progress">
+      <div class="progress-step current">
+        <div class="step-number">1</div><div class="step-title">Shipping</div>
+      </div>
+      <div class="progress-step">
+        <div class="step-number">2</div><div class="step-title">Payment</div>
+      </div>
+      <div class="progress-step">
+        <div class="step-number">3</div><div class="step-title">Review</div>
+      </div>
+      <div class="progress-step">
+        <div class="step-number">4</div><div class="step-title">Done</div>
+      </div>
+    </div>
+
+    <div class="two-col-summary">
+      <section class="panel">
+        <h2>Shipping Information</h2>
+        <form class="mt-3">
+          <div class="form-group">
+            <label class="form-label" for="first">First name</label>
+            <input class="form-input" id="first" type="text" required placeholder="Jane" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last">Last name</label>
+            <input class="form-input" id="last" type="text" required placeholder="Doe" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" id="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-input" id="phone" type="tel" required placeholder="(555) 123-4567" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="addr1">Address line 1</label>
+            <input class="form-input" id="addr1" type="text" required placeholder="123 Main St" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="addr2">Address line 2</label>
+            <input class="form-input" id="addr2" type="text" placeholder="Apt, suite, etc." />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="city">City</label>
+              <input class="form-input" id="city" type="text" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="state">State</label>
+              <input class="form-input" id="state" type="text" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="zip">ZIP</label>
+              <input class="form-input" id="zip" type="text" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="country">Country</label>
+              <input class="form-input" id="country" type="text" required />
+            </div>
+          </div>
+          <div class="mt-3 btn-row">
+            <a class="btn btn-primary" href="#">Continue to Payment</a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="panel">
+        <h2>Order Summary</h2>
+        <div class="summary-row">
+          <span>Subtotal</span><strong>$238.00</strong>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span><span>Free over $75</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax</span><span>—</span>
+        </div>
+        <div class="summary-row summary-total">
+          <span>Total</span><span>$238.00</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+</body>
+</html>

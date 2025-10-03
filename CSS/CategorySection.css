@@ -1,0 +1,52 @@
+.category_title h1{
+    border-color: darkgray;
+    padding-bottom: 10px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: borderslide 1.5s linear infinite forwards;
+
+}
+@keyframes borderslide{
+    0%{
+        border-bottom:solid;
+        border-color: darkgray;
+        width: 0%;
+    }
+    10%{
+        border-bottom: solid;
+        border-color: darkgray;
+        width: 10%;
+    }
+    20%{
+        border-bottom:solid;
+        border-color: darkgray;
+        width: 20%;
+    }
+    30%{
+        border-bottom:solid;
+        border-color: darkgray;
+        width: 25%;
+} }
+.Category_section{
+    display: grid;
+    position: relative;
+    gap: 2rem;
+    grid-template-columns: repeat(3,1fr);
+    margin: 20px;
+    height: fit-content;
+    border: solid;
+}
+.CatImg{
+    position: absolute;
+    width: 300px;
+    object-fit: cover;
+    height: 150px;
+    opacity: 80%;
+}
+.Category_section h3{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
