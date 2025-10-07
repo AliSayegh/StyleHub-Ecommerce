@@ -179,9 +179,9 @@ html, body {
   display: none;
 }
 @media (min-width:461px) and (max-width: 771px) {
-  body{
+  /* body{
 
-  }
+  } */
   .NavBar {
     display: none;
   }
@@ -357,4 +357,58 @@ html, body {
   #drawer-toggle:checked ~ .drawer {
     transform: translateX(0);
   }
+}
+
+/* Footer styles from layout.css */
+footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 40px 0;
+  margin-top: 48px;
+}
+
+.footer-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 24px; 
+}
+
+.footer-grid h4 { 
+  color: #fff; 
+  margin-bottom: 12px; 
+  font-size: 1rem; 
+}
+
+.footer-grid a { 
+  color: #cbd5e1; 
+}
+
+.footer-bottom { 
+  margin-top: 24px; 
+  border-top: 1px solid #1f2937; 
+  padding-top: 16px; 
+  font-size: 14px; 
+  color: #94a3b8; 
+}
+
+/* Required base styles from base.css */
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+a { 
+  color: #3b82f6; 
+  text-decoration: none; 
+}
+
+a:hover footer { 
+  text-decoration: underline; 
+}
+
+h4 { 
+  font-size: 1.25rem; 
+  font-weight: 600; 
 }
